@@ -1,0 +1,50 @@
+{
+  "result": {
+    "total": 17,
+    "data": [
+      {
+        "name": "001_无照片逻辑判断",
+        "region": "武侯区",
+        "address": "新南路96号附13号",
+        "illegalTypes": "许可证未公示",
+        "lastUpdate": "2018-11-12 17:28:58",
+        "platform": "饿了么星选"
+      },
+      {
+        "name": "001_有照片照片地址为空",
+        "region": "金牛区",
+        "address": "金牛区银河路1号",
+        "illegalTypes": "许可证未公示",
+        "lastUpdate": "2018-11-12 17:28:58",
+        "platform": "饿了么星选"
+      },
+      {
+        "name": "001_无照片逻辑判断",
+        "region": "龙泉驿区",
+        "address": "新南路96号附13号",
+        "illegalTypes": "许可证未公示",
+        "lastUpdate": "2018-11-12 17:28:59",
+        "platform": "饿了么星选"
+      },
+      {
+        "name": "002_有照片但无许可证(其它)",
+        "region": "锦江区",
+        "address": "成都市锦江区红豆树街228号－1楼",
+        "illegalTypes": "许可证未公示",
+        "lastUpdate": "2018-11-12 17:29:00",
+        "platform": "饿了么星选"
+      },
+      {
+        "name": "001_无照片逻辑判断",
+        "region": "武侯区",
+        "address": "新南路96号附13号",
+        "illegalTypes": "许可证未公示",
+        "lastUpdate": "2018-11-12 17:29:01",
+        "platform": "饿了么星选"
+      }
+    ],
+    "pageNo": 1,
+    "pageSize": 5
+  },
+  "message": null
+}
