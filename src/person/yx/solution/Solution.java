@@ -907,7 +907,134 @@ public class Solution {
         if (differentNum < 3) {
             return first == null ? 0 : first;
         }
-        return third == null ? 0 : first;
+        return third == null ? 0 : third;
+    }
+
+    /**
+     * 415
+     *
+     * @param num1
+     * @param num2
+     * @return
+     */
+    public String addStrings(String num1, String num2) {
+        StringBuilder result = new StringBuilder();
+        char[] cs1 = num1.toCharArray();
+        char[] cs2 = num2.toCharArray();
+        int i = cs1.length - 1;
+        int j = cs2.length - 1;
+        int up = 0;
+        while (i >= 0 || j >= 0 || up > 0) {
+            int temp = 0;
+            if (i >= 0) {
+                temp += cs1[i--] - '0';
+            }
+            if (j >= 0) {
+                temp += cs2[j--] - '0';
+            }
+            temp += up;
+            result.append(temp % 10);
+            up = temp / 10;
+        }
+        return result.reverse().toString();
+    }
+
+    /**
+     * 437
+     *
+     * @param root
+     * @param sum
+     * @return
+     */
+    public int pathSum(TreeNode root, int sum) {
+        if (root == null) {
+            return 0;
+        }
+        return subPathSum(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+    }
+
+    private int subPathSum(TreeNode root, int sum) {
+        if (root == null) {
+            return 0;
+        }
+        int current = sum - root.val;
+        if (current == 0) {
+            return 1 + subPathSum(root.left, current) + subPathSum(root.right, current);
+        }
+        return subPathSum(root.left, current) + subPathSum(root.right, current);
+    }
+
+    /**
+     * 441
+     *
+     * @param n
+     * @return
+     */
+    public int arrangeCoins(int n) {
+        int result = 0;
+        if (n == 0) {
+            return result;
+        }
+        for (int i = 1; ; i++) {
+            result += i;
+            if (result > n) {
+                return i - 1;
+            } else if (result == n) {
+                return i;
+            }
+        }
+    }
+
+    /**
+     * 443
+     *
+     * @param chars
+     * @return
+     */
+    public int compress(char[] chars) {
+
+        return 0;
+    }
+
+    /**
+     * 447
+     *
+     * @param points
+     * @return
+     */
+    public int numberOfBoomerangs(int[][] points) {
+        return 0;
+    }
+
+    /**
+     * 448
+     *
+     * @param nums
+     * @return
+     */
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[nums[i] - 1] != nums[i]) {
+                swap(nums, i, nums[i] - 1);
+            }
+        }
+
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                res.add(i + 1);
+            }
+        }
+        return res;
+    }
+
+    private void swap(int[] nums, int index1, int index2) {
+        if (index1 == index2) {
+            return;
+        }
+        nums[index1] = nums[index1] ^ nums[index2];
+        nums[index2] = nums[index1] ^ nums[index2];
+        nums[index1] = nums[index1] ^ nums[index2];
     }
 }
 
